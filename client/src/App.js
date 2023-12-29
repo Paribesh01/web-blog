@@ -3,15 +3,16 @@ import {BrowserRouter as Router,Routes,Route} from "react-router-dom";
 import Home from "./pages/home"
 import Add from "./pages/add"
 import Blog from "./pages/blog"
+import Nav from "./components/Nav";
 
 function App() {
 
 
 // console.log(data); 
  return <Router>
-  <div className="bg-gradient-to-r from-gray-700 via-gray-900 to-black w-full h-full">
+  <div >
 
-  <h1 className="text-center font-bold text-5xl underline text-white">Paribesh's Blog</h1>
+  <Nav />
   <Routes>
 
   <Route path='/' exact element = {<Home/>} />

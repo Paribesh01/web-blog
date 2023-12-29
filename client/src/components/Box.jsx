@@ -1,28 +1,34 @@
 import React from "react";
-// import './Box.css';
+import './Box.css';
 import {Link} from 'react-router-dom'
 
 
 const Box = (props)=>{
     return(
 
-                <div key={props.id} className=" w-64 mx-auto my-8 p-6 shadow-md rounded-lg bg-gradient-to-r from-green-300 via-blue-500 to-purple-600  ">
-        <div className="text-center mb-4">
-            <h2 className="font-bold text-2xl uppercase ">{props.title}</h2>
-        </div>
-        <div className="text-center mb-8 ">
-            <p>{props.text}</p>
-        </div>
-        <div className="flex justify-center ">
-        <Link to={'blog/'+props.id}>
-            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-            Read More
-            </button>
-            </Link>
-        </div>
-        </div>
+        // <div key={props.id} className="box bg-black">
+        // <div className="image  ">
+        //     <img  src="https://images6.alphacoders.com/133/1338694.png" alt="imageee" className="w-full h-full" />
+        // </div>
+        // <div className="texts" >
+        //     <h1 className=" font-bold uppercase text-xl  ">{props.title} </h1>
+        // </div>
+        // </div>
 
+        
+            <div key={props.id} className="table drop-shadow-xl rounded-lg ">
+                <div className="image  ">
+                    <img  className="rounded-t-lg" src="https://images6.alphacoders.com/133/1338694.png"  />
+                </div>
+                <div className="texts flex justify-center" >
+                    <div className=" w-4/5 mt-8 ">
 
+                 <h1 className=" font-bold uppercase text-xl  text-customBlue ">{props.title} </h1>
+                    <p>{props.text}</p>
+                </div>
+                </div>
+            </div>
+        
 
         // <div key={props.id} className="">
         // <h1 className="font-bold uppercase">{props.title}</h1>

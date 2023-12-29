@@ -4,6 +4,9 @@ import Box from "../components/Box";
 import {Link} from "react-router-dom"
 import React, { useState, useEffect } from 'react';
 
+import Hero from '../components/Hero';
+
+
 const Home = ()=>{
 
   function truncateAfter20Words(str) {
@@ -29,13 +32,20 @@ const Home = ()=>{
 
     return(
       <div >
+        
+        
+         <Hero/>
+         <h1 className='uppercase font-bold text-4xl underline ml-14 mb-10 ' >Blogs</h1>
+        {/* <Link to='/add/blog' className='text-white'>Add Blog</Link> */}
+        <div className=' w-full  flex justify-center '>
 
-      <Link to='/add/blog' className='text-white'>Add Blog</Link>
-        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4'>
+        <div className='grid  md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-36'>
       {data.map(da=>(
         <Box id={da._id}  title = {da.title} text = {truncateAfter20Words(da.text)} />
+        
         ))}
 
+        </div>
         </div>
           </div>
     )
