@@ -1,5 +1,14 @@
-.box{
-    background-color: cornsilk;
-    height: auto;
-    width: 500px;
+.table{
+    height: 498px;
+    width: 360px;
+    background-color: rgb(255, 255, 255);
+}
+.image{
+    height: 50%;
+    width: 360px;
+}
+img{
+    height: 100%;   
+    width: 100%;
+    /* object-fit: cover; */
 }

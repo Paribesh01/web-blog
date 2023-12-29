@@ -4,6 +4,21 @@ const Blog = require("./models/blog");
 const bodyparser = require("body-parser")
 const app = express();
 const cors = require('cors')
+const multer = require("multer")
+
+
+app.use(express.static('public'))
+
+const storage = multer.diskStorage({
+    destination: function(req, file, cb) {
+      cb(null, 'public/uploads');  // Save images to the 'uploads' directory
+    },
+    filename: function(req, file, cb) {
+      cb(null, new Date().toISOString().replace(/:/g, '-') + file.originalname);
+    }
+  });
+  
+  const upload = multer({ storage: storage });
 
 
 app.use(express.json());
@@ -33,11 +48,17 @@ app.get("/blog/:id",async(req,res)=>{
    
 })
 
-app.post("/blog/post",async(req,res)=>{
-    const body = req.body;
-    const newblog = new Blog(body);
+app.post("/blog/post",upload.single('img') ,async(req,res)=>{
+    const {title,text} = req.body;
+    const img = req.file.filename;
+    // console.log(img.path)
+
+
+
+    const newblog = new Blog({title,text,img});
     await newblog.save().then(()=>{
         console.log("New blog is added");
+        console.log(newblog);
         res.send("ok")
     }).catch(()=>{
         console.log("Error while adding the new blog");
