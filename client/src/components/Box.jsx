@@ -18,7 +18,7 @@ const Box = (props)=>{
         
             <div key={props.id} className="table drop-shadow-xl rounded-lg ">
                 <div className="image  ">
-                    <img  className="rounded-t-lg" src="https://images6.alphacoders.com/133/1338694.png"  />
+                    <img  className="rounded-t-lg" src={'http://localhost:4000/uploads/'+props.img} alt={props.img} />
                 </div>
                 <div className="texts flex justify-center" >
                     <div className=" w-4/5 mt-8 ">

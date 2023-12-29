@@ -41,7 +41,7 @@ const Home = ()=>{
 
         <div className='grid  md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-36'>
       {data.map(da=>(
-        <Box id={da._id}  title = {da.title} text = {truncateAfter20Words(da.text)} />
+        <Box id={da._id} img ={da.img} title = {da.title} text = {truncateAfter20Words(da.text)} />
         
         ))}
 
