@@ -8,6 +8,7 @@ const Blog = ()=>{
     const {id} = useParams(); // for taking id from the link blog/:id
     const [data,setData] = useState([])
 
+   
 
     useEffect(()=>{
         axios.get(`http://localhost:4000/blog/${id}`)
@@ -20,7 +21,7 @@ const Blog = ()=>{
           console.log("Error while getting data from the server"+e)
         })
     },[id]);
-
+    
     return(<div>
 
         <h1>Blog Post</h1>
