@@ -22,6 +22,10 @@ const upload = multer({ storage: storage });
 app.use(express.json());
 app.use(cors());
 
+app.get("/", (req, res) => {
+  res.send("All Good");
+});
+
 app.get("/blog/get", async (req, res) => {
   const blogs = await Blog.find({});
   // const jsonString = JSON.stringify(blogs, null, 2)
