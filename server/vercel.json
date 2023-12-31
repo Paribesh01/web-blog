@@ -7,10 +7,5 @@
     }
   ],
 
-  "rewrites": [
-    {
-      "source": "/(.*)",
-      "destination": "/backend/server.js"
-    }
-  ]
+  "rewrites": [{ "source": "/api/(.*)", "destination": "/api" }]
 }
