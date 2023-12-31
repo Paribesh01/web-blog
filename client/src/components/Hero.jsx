@@ -6,8 +6,8 @@ const Hero = ()=>{
         <div className=" w-full h-screen flex justify-around items-center  ">
             <div className="text  flex-col justify-around  w-1/3 h-2/4 items-center ">
                 <h1 className="head font-bold uppercase text-6xl  mb-7 ">Write that changes the world</h1>
-                <span >
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odit sapiente iusto ratione voluptas architecto quaerat, labore omnis fugit porro maiores.
+                    <span > 
+                    Lorem, ipsum dolor sit  amet consectetur adipisicing elit. Odit sapiente iusto ratione voluptas architecto quaerat, labore omnis fugit porro maiores.
 
                 </span>
             </div>
