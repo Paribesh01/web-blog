@@ -30,7 +30,7 @@ app.get("/blog/get", async (req, res) => {
 
 app.get("/blog/:id", async (req, res) => {
   const { id } = req.params;
-  console.log(id);
+  // console.log(id);
   try {
     const blog = await Blog.findById(id);
     console.log(blog);
@@ -59,6 +59,21 @@ app.post("/blog/post", upload.single("img"), async (req, res) => {
       console.log("Error while adding the new blog");
       res.send("Not ok");
     });
+});
+
+app.delete("/delete-blog/:id", async (req, res) => {
+  const { id } = req.params;
+  // console.log(id);
+  try {
+    const blog = await Blog.findByIdAndDelete(id);
+    // console.log(blog);
+    // res.send("ok")
+    // res.json(blog);
+    console.log("Deleted data");
+  } catch (e) {
+    console.log("Error while finding blog through id" + e);
+    res.send("Not Ok");
+  }
 });
 
 app.listen(4000, (req, res) => {

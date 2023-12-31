@@ -2,10 +2,26 @@ import { Link, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import "./blog.css";
+import { useNavigate } from "react-router-dom";
 
 const Blog = () => {
+  const Navigate = useNavigate();
+
   const { id } = useParams(); // for taking id from the link blog/:id
   const [data, setData] = useState([]);
+
+  const handelSumbit = (e) => {
+    // console.log(e);
+    axios
+      .delete(`http://localhost:4000/delete-blog/${id}`)
+      .then((res) => {
+        console.log("Deleted");
+      })
+      .catch((e) => {
+        console.log("Error while deleting data");
+      });
+    Navigate("/");
+  };
 
   useEffect(() => {
     axios
@@ -35,6 +51,12 @@ const Blog = () => {
             <p className=" mt-5 text-xl">{data.text}</p>
           </div>
         </div>
+        <button
+          onClick={handelSumbit}
+          className=" bg-red-500 p-5 rounded-xl text-xl font-bold "
+        >
+          Delete
+        </button>
       </div>
     </div>
   );
