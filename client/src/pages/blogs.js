@@ -1,12 +1,9 @@
-// import react from "react";
 import axios from "axios";
 import Box from "../components/Box";
 import { Link } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 
-import Hero from "../components/Hero";
-
-const Home = () => {
+const Blogs = () => {
   function truncateAfter20Words(str) {
     if (str.length <= 20) {
       return str;
@@ -20,7 +17,7 @@ const Home = () => {
     axios
       .get("http://localhost:4000/blog/get")
       .then((responce) => {
-        setData(responce.data.slice(0, 3));
+        setData(responce.data);
         // console.log(responce.data)
         // console.log(data);
       })
@@ -31,7 +28,6 @@ const Home = () => {
 
   return (
     <div>
-      <Hero />
       <h1 className="uppercase font-bold text-4xl underline ml-14 mb-10 ">
         Blogs
       </h1>
@@ -51,4 +47,5 @@ const Home = () => {
     </div>
   );
 };
-export default Home;
+
+export default Blogs;
