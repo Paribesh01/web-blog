@@ -1,5 +1,5 @@
 const express = require("express");
-const dbconn = require("./dbconn");
+const dbconn = require("./db/dbconn");
 const Blog = require("./models/blog");
 const bodyparser = require("body-parser");
 const app = express();
