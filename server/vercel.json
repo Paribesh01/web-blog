@@ -1,12 +1,7 @@
 {
   "version": 2,
   "buildCommand": "node index.js",
-  "builds": [
-    {
-      "src": "./backend/server.js",
-      "use": "@vercel/node"
-    }
-  ],
+  
 
   "rewrites": [{ "source": "/(.*)", "destination": "/" }]
 }
