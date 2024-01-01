@@ -26,12 +26,10 @@ app.get("/", (req, res) => {
   res.send("All Good");
 });
 
-app.get("/blog/get", (req, res) => {
-  setTimeout(() => {
-    const blogs = Blog.find({});
-    // const jsonString = JSON.stringify(blogs, null, 2)
-    res.json(blogs);
-  }, 5000);
+app.get("/blog/get", async (req, res) => {
+  const blogs = await Blog.find({});
+  // const jsonString = JSON.stringify(blogs, null, 2)
+  res.json(blogs);
 });
 
 app.get("/blog/:id", async (req, res) => {
