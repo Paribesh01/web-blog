@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "buildCommand": "next build",
+  "buildCommand": "node index.js",
   "builds": [
     {
       "src": "./backend/server.js",
