@@ -29,7 +29,7 @@ app.get("/", (req, res) => {
 app.get("/blog/get", async (req, res) => {
   const blogs = await Blog.find({});
   // const jsonString = JSON.stringify(blogs, null, 2)
-  res.json(blogs);
+  res.status(200).json({pro:blogs});
 });
 
 app.get("/blog/:id", async (req, res) => {
